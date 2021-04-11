@@ -9,6 +9,14 @@
 This package provides an S3 class designed to remove the friction
     of working with version numbers in R.
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/wurli/versionr}
+  \item \url{https://wurli.github.io/versionr/}
+}
+
+}
 \author{
 \strong{Maintainer}: Jacob Scott \email{jscott2718@gmail.com}
 
