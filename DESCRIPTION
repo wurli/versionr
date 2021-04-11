@@ -1,0 +1,23 @@
+Package: versionr
+Title: Create, Use and Manipulate Version Numbers
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Jacob",
+           family = "Scott",
+           role = c("aut", "cre"),
+           email = "jscott2718@gmail.com")
+Description: This package provides an S3 class to make working with 
+    version numbers much easier.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+Imports: 
+    vctrs,
+    pillar
+Suggests: 
+    testthat (>= 3.0.0),
+    tibble,
+    dplyr
+Config/testthat/edition: 3
