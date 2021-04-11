@@ -74,7 +74,7 @@ to a database." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">versionr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.0.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0</span>
       </span>
     </div>
 
@@ -101,9 +101,17 @@ to a database." />
     </li>
   </ul>
 </li>
+<li>
+  <a href="../news/index.html">Changelog</a>
+</li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        
+        <li>
+  <a href="https://github.com/wurli/versionr/">
+    <span class="fab fa fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
       </ul>
       
     </div><!--/.nav-collapse -->
@@ -118,7 +126,7 @@ to a database." />
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Tabulate version numbers</h1>
-    
+    <small class="dont-index">Source: <a href='https://github.com/wurli/versionr/blob/master/R/tabulate_versions.R'><code>R/tabulate_versions.R</code></a></small>
     <div class="hidden name"><code>tabulate_versions.Rd</code></div>
     </div>
 
@@ -159,9 +167,9 @@ version numbers. Either "version_number" for a <code>version_number</code>-class
 <span class='fu'>tabulate_versions</span><span class='op'>(</span><span class='fu'><a href='version_number.html'>version_number</a></span><span class='op'>(</span><span class='st'>"1.0.0.0"</span>, <span class='st'>"1.0.1.0"</span><span class='op'>)</span>, <span class='st'>"version_number"</span><span class='op'>)</span>
 </div><div class='output co'>#&gt; </span><span style='color: #555555;'># A tibble: 2 x 5</span><span>
 #&gt;   full_version major minor patch   dev
-#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;vrsn&gt;</span><span>       </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span>
-#&gt; </span><span style='color: #555555;'>1</span><span> 1.0.0.0          1     0     0     0
-#&gt; </span><span style='color: #555555;'>2</span><span> 1.0.1.0          1     0     1     0</div><div class='input'>
+#&gt;         </span><span style='color: #555555;font-style: italic;'>&lt;vrsn&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span>
+#&gt; </span><span style='color: #555555;'>1</span><span>          </span><span style='color: #555555;'>[4]</span><span>     1     0     0     0
+#&gt; </span><span style='color: #555555;'>2</span><span>          </span><span style='color: #555555;'>[4]</span><span>     1     0     1     0</div><div class='input'>
 </div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

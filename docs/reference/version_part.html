@@ -74,7 +74,7 @@ version number column. If a part is not present, NA will be returned." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">versionr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.0.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0</span>
       </span>
     </div>
 
@@ -101,9 +101,17 @@ version number column. If a part is not present, NA will be returned." />
     </li>
   </ul>
 </li>
+<li>
+  <a href="../news/index.html">Changelog</a>
+</li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        
+        <li>
+  <a href="https://github.com/wurli/versionr/">
+    <span class="fab fa fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
       </ul>
       
     </div><!--/.nav-collapse -->
@@ -118,7 +126,7 @@ version number column. If a part is not present, NA will be returned." />
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Get a Version Number Part</h1>
-    
+    <small class="dont-index">Source: <a href='https://github.com/wurli/versionr/blob/master/R/version_part.R'><code>R/version_part.R</code></a></small>
     <div class="hidden name"><code>version_part.Rd</code></div>
     </div>
 
@@ -173,12 +181,12 @@ version number column. If a part is not present, <code>NA</code> will be returne
 #&gt; <span class='message'></span>
 #&gt; <span class='message'>    intersect, setdiff, setequal, union</span></div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 5 x 2</span><span>
 #&gt;   versions version_desc      
-#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;vrsn&gt;</span><span>   </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>             
-#&gt; </span><span style='color: #555555;'>1</span><span> 1.0.0    It's alive!       
-#&gt; </span><span style='color: #555555;'>2</span><span> 1.0.0.1  Tweak to balancing
-#&gt; </span><span style='color: #555555;'>3</span><span> 1.0.0.2  Bug fix           
-#&gt; </span><span style='color: #555555;'>4</span><span> 1.2.0    Can do flips      
-#&gt; </span><span style='color: #555555;'>5</span><span> 2.0.0    Complete rework   </div><div class='input'>
+#&gt;     </span><span style='color: #555555;font-style: italic;'>&lt;vrsn&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>             
+#&gt; </span><span style='color: #555555;'>1</span><span>      </span><span style='color: #555555;'>[3]</span><span> It's alive!       
+#&gt; </span><span style='color: #555555;'>2</span><span>      </span><span style='color: #555555;'>[4]</span><span> Tweak to balancing
+#&gt; </span><span style='color: #555555;'>3</span><span>      </span><span style='color: #555555;'>[4]</span><span> Bug fix           
+#&gt; </span><span style='color: #555555;'>4</span><span>      </span><span style='color: #555555;'>[3]</span><span> Can do flips      
+#&gt; </span><span style='color: #555555;'>5</span><span>      </span><span style='color: #555555;'>[3]</span><span> Complete rework   </div><div class='input'>
 <span class='co'># Filter for dev versions</span>
 <span class='kw'>if</span> <span class='op'>(</span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>require</a></span><span class='op'>(</span><span class='va'><a href='https://dplyr.tidyverse.org'>dplyr</a></span>, quietly <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>{</span>
   <span class='va'>data</span> <span class='op'>%&gt;%</span>
@@ -186,9 +194,9 @@ version number column. If a part is not present, <code>NA</code> will be returne
 <span class='op'>}</span>
 </div><div class='output co'>#&gt; </span><span style='color: #555555;'># A tibble: 2 x 2</span><span>
 #&gt;   versions version_desc      
-#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;vrsn&gt;</span><span>   </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>             
-#&gt; </span><span style='color: #555555;'>1</span><span> 1.0.0.1  Tweak to balancing
-#&gt; </span><span style='color: #555555;'>2</span><span> 1.0.0.2  Bug fix           </div><div class='input'>
+#&gt;     </span><span style='color: #555555;font-style: italic;'>&lt;vrsn&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>             
+#&gt; </span><span style='color: #555555;'>1</span><span>      </span><span style='color: #555555;'>[4]</span><span> Tweak to balancing
+#&gt; </span><span style='color: #555555;'>2</span><span>      </span><span style='color: #555555;'>[4]</span><span> Bug fix           </div><div class='input'>
 <span class='co'># Filter for major version 1</span>
 <span class='kw'>if</span> <span class='op'>(</span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>require</a></span><span class='op'>(</span><span class='va'><a href='https://dplyr.tidyverse.org'>dplyr</a></span>, quietly <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>{</span>
   <span class='va'>data</span> <span class='op'>%&gt;%</span>
@@ -196,11 +204,11 @@ version number column. If a part is not present, <code>NA</code> will be returne
 <span class='op'>}</span>
 </div><div class='output co'>#&gt; </span><span style='color: #555555;'># A tibble: 4 x 2</span><span>
 #&gt;   versions version_desc      
-#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;vrsn&gt;</span><span>   </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>             
-#&gt; </span><span style='color: #555555;'>1</span><span> 1.0.0    It's alive!       
-#&gt; </span><span style='color: #555555;'>2</span><span> 1.0.0.1  Tweak to balancing
-#&gt; </span><span style='color: #555555;'>3</span><span> 1.0.0.2  Bug fix           
-#&gt; </span><span style='color: #555555;'>4</span><span> 1.2.0    Can do flips      </div></span></pre>
+#&gt;     </span><span style='color: #555555;font-style: italic;'>&lt;vrsn&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>             
+#&gt; </span><span style='color: #555555;'>1</span><span>      </span><span style='color: #555555;'>[3]</span><span> It's alive!       
+#&gt; </span><span style='color: #555555;'>2</span><span>      </span><span style='color: #555555;'>[4]</span><span> Tweak to balancing
+#&gt; </span><span style='color: #555555;'>3</span><span>      </span><span style='color: #555555;'>[4]</span><span> Bug fix           
+#&gt; </span><span style='color: #555555;'>4</span><span>      </span><span style='color: #555555;'>[3]</span><span> Can do flips      </div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
