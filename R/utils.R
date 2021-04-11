@@ -21,8 +21,6 @@ pad_version_number <- function(x, places, warning = NULL, use_na = FALSE) {
 #' Get the index of a version number part
 #'
 #' @param which Either an option in `getOption("versionr.parts")` or a number
-#'
-#' @return A number
 which_version_part <- function(which) {
   if (is.numeric(which)) {
     stopifnot("`which` must be length 1" = length(which) == 1,

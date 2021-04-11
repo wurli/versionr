@@ -9,9 +9,6 @@ which_version_part(which)
 \arguments{
 \item{which}{Either an option in \code{getOption("versionr.parts")} or a number}
 }
-\value{
-A number
-}
 \description{
 Get the index of a version number part
 }

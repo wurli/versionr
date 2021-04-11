@@ -1,0 +1,85 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# {versionr} Package
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+{versionr} is a lightweight package designed to remove the friction of working
+with version numbers in R. The main benefit of `versionr` is the 
+[vctrs](https://vctrs.r-lib.org/)-powered S3 class `version_number`.
+
+## Installation
+
+You can install the development version from [GitHub](https://github.com/) with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("wurli/versionr")
+```
+## Create Version Numbers
+
+Version numbers can be created using characters or numeric vectors, and can
+have arbitrary numbers of parts
+```{r example}
+library(versionr)
+
+version_number("1.0.0", "1.0.1")
+version_number(c(1, 0, 0, 0), c(1, 0, 0, 1))
+```
+
+## Sorting
+
+A main benefit of {versionr} is easy version comparison and sorting
+```{r}
+nums <- version_number("1.0.0", "1.0.11", "1.0.2", "2.0.0.1")
+
+# 1.0.11 should come after 1.0.2:
+nums[2] > nums[3]
+
+# Sorting is easy:
+sort(nums)
+```
+
+## Bumping
+
+Version numbers can be easily 'bumped' using `bump_version()`:
+```{r}
+bump_version(nums, "patch")
+bump_version(nums, "major")
+```
+
+
+## Accessing Version Parts
+
+Version numbers are vectors, and you can easily access particular parts using
+`version_part()`:
+```{r}
+version_part(nums, "minor")
+version_part(nums, "dev")
+```
+
+## Implementation
+
+Behind the scenes, version numbers are just vectors of integers wrapped in a list:
+```{r}
+unclass(nums)
+```
+...This makes intuitive subsetting possible:
+```{r}
+nums[[3]][4]
+```
+

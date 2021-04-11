@@ -30,10 +30,10 @@ cases this will be -1 to look for the previous version.}
 A version number
 }
 \description{
-This function makes it easy to find a version number by indexing from another
-version number. This is particularly useful when you want to know, e.g. what
-the last dev version was before a certain patch version, or what the last
-minor version was before a certain major version.
+This function makes it easy to find a version number in an existing set by
+indexing from another version number. This is particularly useful when you
+want to know, e.g. what the last development version was before a certain patch
+version, or what the last minor version was before a certain major version.
 }
 \examples{
 data <- version_number("1.0.0", "1.2.0", "1.2.0.1", "2.0.0")

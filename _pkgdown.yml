@@ -1,0 +1,15 @@
+reference:
+- title: Create Version Numbers
+- contents:
+  - version_number
+  - as_version_number
+- title: Work with Version Numbers
+- contents:
+  - bump_version
+  - is_version_number
+  - version_part
+  - "%==%"
+- title: Other Helpers
+- contents:
+  - tabulate_versions
+  - search_versions

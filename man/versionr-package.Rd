@@ -4,10 +4,10 @@
 \name{versionr-package}
 \alias{versionr}
 \alias{versionr-package}
-\title{versionr: Create, Use and Manipulate Version Numbers}
+\title{versionr: Create, and Manipulate and Sort Version Numbers}
 \description{
-This package provides an S3 class to make working with 
-    version numbers much easier.
+This package provides an S3 class designed to remove the friction
+    of working with version numbers in R.
 }
 \author{
 \strong{Maintainer}: Jacob Scott \email{jscott2718@gmail.com}

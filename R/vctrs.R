@@ -8,8 +8,6 @@ NULL
 #' Create a version number
 #'
 #' @param x A list
-#'
-#' @export
 new_version_number <- function(x = list()) {
   new_list_of(x, ptype = integer(), class = "version_number")
 }
@@ -103,7 +101,10 @@ as.character.version_number <- function(x, ...) {
   format(x)
 }
 
-#' @importFrom pillar pillar_shaft
+# Importing this way allows tibbles to nicely print version numbers, but
+# allows the `tibble` package to remain in the 'suggests' field
+pillar_shaft <- pillar::pillar_shaft
+
 #' @export
 pillar_shaft.version_number <- function(x, ...) {
   pillar::new_pillar_shaft_simple(format(x), align = "left")
@@ -116,7 +117,7 @@ vec_proxy_compare.version_number <- function(x, ...) {
   max_parts <- max(vapply(x, length, numeric(1)))
 
   if (max_parts > max_len) {
-    stop(sprintf(paste0("Can't compare version numbers with more than %d parts. ",
+    stop(sprintf(paste0("Can't compare version numbers with more than %d parts.\n  ",
                         "Please set `options(versionr.max_parts = %d)` to do so."),
                  max_len, max_parts))
   }

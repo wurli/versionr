@@ -1,23 +1,26 @@
 Package: versionr
-Title: Create, Use and Manipulate Version Numbers
+Title: Create, and Manipulate and Sort Version Numbers
 Version: 0.0.0.9000
 Authors@R: 
     person(given = "Jacob",
            family = "Scott",
            role = c("aut", "cre"),
            email = "jscott2718@gmail.com")
-Description: This package provides an S3 class to make working with 
-    version numbers much easier.
+Description: This package provides an S3 class designed to remove the friction
+    of working with version numbers in R.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 Imports: 
-    vctrs,
-    pillar
+    vctrs
 Suggests: 
     testthat (>= 3.0.0),
+    pillar,
     tibble,
-    dplyr
+    dplyr,
+    rmarkdown,
+    knitr
 Config/testthat/edition: 3
+VignetteBuilder: knitr

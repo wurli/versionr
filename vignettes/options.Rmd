@@ -1,0 +1,68 @@
+---
+title: "Options"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Options}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+By default, {versionr} makes use of two options which can be adjusted depending
+on your use-case.
+
+## 1. `versionr.parts`
+The default aliases for version parts are "major", "minor", "patch" and "dev". 
+If you want to use different names, you can specify these using the `versionr.parts`
+option. Functions which make use of these aliases are `bump_version()`, `version_part()`
+and, notably, `tabulate_versions()`, which uses them as column names.
+
+```{r setup}
+library(versionr)
+
+nums <- version_number("1.0.0", "1.0.0.1")
+
+# Using the default alias for the fourth version part
+tabulate_versions(nums)
+version_part(nums, "dev")
+```
+```{r}
+# Setting a custom alias 'fix' for the fourth part:
+options(versionr.parts = c("major", "minor", "patch", "fix"))
+tabulate_versions(nums)
+version_part(nums, "fix")
+```
+
+## 2. `versionr.max_parts`
+This is the maximum number of parts a version number will be allowed to have
+on creation. If you try and sort a set of version numbers that includes
+any with more than this number of parts, you will get an error. However, the 
+default max number of parts is 6, which should be more than enough for most
+uses. 
+
+```{r}
+long_versions <- version_number("1.0.0.0", "1.0.0.0.0.0.1")
+
+# This will give an informative error
+message(try(sort(long_versions), silent = TRUE))
+```
+```{r}
+# Setting the option makes the error go away:
+options(versionr.max_parts = 10)
+sort(long_versions)
+```
+
+The need for this option is related to the way R handles sorting of S3 vectors: 
+in order to compare two version numbers you need to have pre-knowledge of the 
+length of both. So, before comparing them, `versionr` padds unspecified parts
+with zeros so that all the numbers to compare have `versionr.max_parts` numbers
+of parts.
+
+
+

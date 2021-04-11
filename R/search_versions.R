@@ -1,9 +1,9 @@
 #' Search a Set of Version Numbers
 #'
-#' This function makes it easy to find a version number by indexing from another
-#' version number. This is particularly useful when you want to know, e.g. what
-#' the last dev version was before a certain patch version, or what the last
-#' minor version was before a certain major version.
+#' This function makes it easy to find a version number in an existing set by
+#' indexing from another version number. This is particularly useful when you
+#' want to know, e.g. what the last development version was before a certain patch
+#' version, or what the last minor version was before a certain major version.
 #'
 #' @param data Existing version numbers to search
 #' @param reference The version number to index from - can be given as a
@@ -77,14 +77,6 @@ search_versions <- function(data, reference, which = length(reference[[1]]), inc
   if (length(get_index) == 0 || is.na(get_index)) {
     stop("No such version number exists in search data")
   }
-
-  # Uncomment for checks
-  # print(data.frame(
-  #   data = data,
-  #   abbr_data = abbr_data,
-  #   abbr_indices = indices,
-  #   return = seq_along(data) == get_index
-  # ))
 
   data[get_index]
 

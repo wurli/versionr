@@ -17,10 +17,7 @@ bump_version <- function(x, which = getOption("versionr.parts"), n = 1) {
 
   index <- which_version_part(which)
 
-  x <- pad_version_number(
-    x, index,
-    "Part to bump not found in version number - missing parts will be added"
-  )
+  x <- pad_version_number(x, index)
 
   out <- lapply(x, function(vn) {
 
