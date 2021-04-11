@@ -24,3 +24,5 @@ Suggests:
     knitr
 Config/testthat/edition: 3
 VignetteBuilder: knitr
+URL: https://github.com/wurli/versionr,
+    https://wurli.github.io/versionr/
