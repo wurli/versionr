@@ -15,6 +15,4 @@ test_that("bumping fails correctly", {
   expect_error(bump_version(nums[1],       1, -2), "Version number parts cannot be negative")
   expect_error(bump_version(nums[1], "minor", -1), "Version number parts cannot be negative")
 
-  expect_warning(bump_version(nums[2], 5, 0), "Part to bump not found in version number")
-
 })
